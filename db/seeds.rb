@@ -14,3 +14,19 @@ ingredients["drinks"].each do |ingredient|
   i = Ingredient.create(name: ingredient["strIngredient1"])
   puts "create #{i.name}"
 end
+
+
+puts "Adding Cocktails"
+Cocktail.create(name: "NegronIRI")
+Cocktail.create(name: "MargaIRIta")
+Cocktail.create(name: "Bloody MaIRI")
+Cocktail.create(name: "DaquIRI")
+Cocktail.create(name: "CosmopolitanIRI")
+Cocktail.create(name: "CaipIRInha")
+
+
+# p "Adding Ingredients"
+# Ingredient.create(name: "whiskey")
+# Ingredient.create(name: "fresh lemon juice")
+# Ingredient.create(name: "syrup")
+# Ingredient.create(name: "crushed ice")
