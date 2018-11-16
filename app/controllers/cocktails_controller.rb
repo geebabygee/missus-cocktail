@@ -3,13 +3,17 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :destroy, :edit, :update]
 
   def index
-     @cocktails = Cocktail.all
-  end
+    if params[:query].present?
+      @cocktails = Cocktail.where("name LIKE ?","%#{params[:query]}%")
+    else
+      @cocktails = Cocktail.all
+   end
+ end
 
-  def show
-  end
+ def show
+ end
 
-  def new
+ def new
     @cocktail = Cocktail.new #a new Cocktail for the form
   end
 
@@ -19,18 +23,18 @@ class CocktailsController < ApplicationController
     if @cocktail.save
       redirect_to cocktail_path(@cocktail) #or just @cocktail
                 # the user wants to see the cocktail he created
-    else
-      render :new
-    end
-  end
+              else
+                render :new
+              end
+            end
 
-  def edit
+            def edit
     #to render the form like new for create but we already have a cocktail so we find it
   end
 
   def update
-  @cocktail.update(cocktail_params)
-  redirect_to @cocktail
+    @cocktail.update(cocktail_params)
+    redirect_to @cocktail
   end
 
   def destroy
@@ -40,16 +44,16 @@ class CocktailsController < ApplicationController
 
   private
 
-    def set_cocktail
-      @cocktail = Cocktail.find(params[:id])
-    end
+  def set_cocktail
+    @cocktail = Cocktail.find(params[:id])
+  end
 
-    def cocktail_params
-      params.require(:cocktail).permit(:name, :photo)
+  def cocktail_params
+    params.require(:cocktail).permit(:name, :photo)
       #:photo
     end
 
-end
+  end
 
 
 

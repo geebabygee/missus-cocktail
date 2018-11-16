@@ -1,4 +1,4 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>');">
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo, width: 400, height: 600, crop: :fill %>');">
   <div class="banner-content">
     <h1><%= @cocktail.name %></h1>
   </div>
@@ -17,8 +17,8 @@
 
           <% @cocktail.doses.each do |dose| %>
           <tr>
-            <td><%= dose.ingredient.name %></td>
             <td><%= dose.description %></td>
+            <td><%= dose.ingredient.name %></td>
             <td>
               <%= link_to dose_path(dose), method: :delete do %>
                   <i class="fa fa-trash destroy_dose"></i>
