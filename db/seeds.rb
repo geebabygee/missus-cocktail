@@ -17,22 +17,19 @@ end
 puts "Destroy Cocktails"
 Cocktail.destroy_all
 puts "Adding Cocktails"
-Cocktail.create(name: "NegronIRI")
-Cocktail.create(name: "MargaIRIta")
-Cocktail.create(name: "Bloody MaIRI")
-Cocktail.create(name: "DaquIRI")
-Cocktail.create(name: "CosmopolitanIRI")
-Cocktail.create(name: "CaipIRInha")
+Cocktail.create!({name: "Negroniri", photo: open("https://res.cloudinary.com/geebabygee/image/upload/c_scale,w_640/v1542385554/negroni.jpg")})
+Cocktail.create!({name: "Margairita", photo: open("https://res.cloudinary.com/geebabygee/image/upload/c_scale,w_640/v1542310799/wqrevp0tqmbdfeyhszto.jpg")})
+Cocktail.create!({name: "Bloody Mairi", photo:  open("https://res.cloudinary.com/geebabygee/image/upload/c_scale,w_640/v1542310779/lvxwadtlkifbh3vsf4au.jpg")})
+Cocktail.create!({name: "Daquiri", photo: open("https://res.cloudinary.com/geebabygee/image/upload/c_scale,w_640/v1542310815/zbw9oe2ymiz10wpa4vnt.jpg")})
+Cocktail.create!({name: "Cosmopolitaniri",photo:  open("https://res.cloudinary.com/geebabygee/image/upload/c_scale,w_640/v1542203204/irwyf9b3co3t4xh5xoew.jpg")})
+Cocktail.create!({name: "Caipirinha", photo: open("https://res.cloudinary.com/geebabygee/image/upload/c_scale,w_640/v1542214876/bn6yxqe86g6ukvgnal7l.png")})
 
+
+# Course.create!({ photo: open("res.cloudinary.com/...photo.jpg") )} – Ben Jul 6 at 12:06
 
 
 puts "Destroying Doses"
 Dose.destroy_all
-p "Adding Doses"
 
-Dose.create(description: "1 part", ingredient_id: Ingredient.all.sample, cocktail_id: Cocktail.all.sample)
-Dose.create(description: "a drop of", ingredient_id: Ingredient.all.sample, cocktail_id: Cocktail.all.sample)
-Dose.create(description: "2 parts", ingredient_id: Ingredient.all.sample, cocktail_id: Cocktail.all.sample)
-Dose.create(description: "a splash of", ingredient_id: Ingredient.all.sample, cocktail_id: Cocktail.all.sample)
 
 p "Seeds finished!"
