@@ -52,8 +52,4 @@ class CocktailsController < ApplicationController
     params.require(:cocktail).permit(:name, :photo)
       #:photo
     end
-
-  end
-
-
-
+end
