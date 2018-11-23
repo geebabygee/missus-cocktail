@@ -1,7 +1,7 @@
 .btnn {
   color: #fff;
   cursor: pointer;
-  font-size:16px;
+  font-size:14px;
   font-weight: 400;
   line-height: 45px;
   margin: 0 0 2em;
@@ -10,25 +10,38 @@
   text-decoration: none;
   text-transform: uppercase;
   width: 100%;
-
-
-  @media(min-width: 600px) {
-
-    margin: 0 1em 2em;
-  }
-
   &:hover { text-decoration: none; }
 
 }
 .btn-3 {
   background: lighten($red, 3%);
   font-weight: 900;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: all 150ms linear;
-  padding: 20px;
+  padding: 12px;
+      &:hover {
+    background: darken($red, 1.5%);
+    border: 1px solid rgba(#000, .05);
+    box-shadow: 1px 1px 2px rgba(#fff, .2);
+    color: lighten($red, 18%);
+    text-decoration: none;
+    text-shadow: -1px -1px 0 darken($red, 9.5%);
+    transition: all 250ms linear;
+  }
 }
 
-.btn-3:hover {
+.btn-4 {
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+  text-transform: uppercase;
+  background: #ef6d69;
+  letter-spacing: 1px;
+  transition: all 150ms linear;
+  height: 38px;
+  width: 90px;
+    &:hover {
   background: darken($red, 1.5%);
   border: 1px solid rgba(#000, .05);
   box-shadow: 1px 1px 2px rgba(#fff, .2);
@@ -36,4 +49,6 @@
   text-decoration: none;
   text-shadow: -1px -1px 0 darken($red, 9.5%);
   transition: all 250ms linear;
+}
+
 }
