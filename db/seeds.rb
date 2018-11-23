@@ -30,6 +30,18 @@ Cocktail.create!({name: "Caipirinha", photo: open("https://res.cloudinary.com/ge
 
 puts "Destroying Doses"
 Dose.destroy_all
-
+puts "Adding Doses"
+Dose.create!({description: "A bit of", cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "A splash of", cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "One part", cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "Two parts", cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "A big hit of",cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "A sprinkle of", cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "A bit of", cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "A splash of", cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "One part", cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "Two parts", cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "A big hit of",cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
+Dose.create!({description: "A sprinkle of", cocktail: Cocktail.all.sample, ingredient: Ingredient.all.sample})
 
 p "Seeds finished!"
