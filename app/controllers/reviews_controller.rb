@@ -19,8 +19,8 @@ class ReviewsController < ApplicationController
 
   private
 
-  def set_restaurant
-    @cocktail = cocktail.find(params[:cocktail_id])
+  def set_cocktail
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 
   def review_params

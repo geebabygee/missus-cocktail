@@ -20,13 +20,13 @@
           <tr>
             <td><%= dose.description %></td>
             <td><%= dose.ingredient.name %></td>
-             <td><%= link_to new_cocktail_dose_path(@cocktail), class: "text-add" do %>
+            <td><%= link_to new_cocktail_dose_path(@cocktail), class: "text-add" do %>
               <i class="fa fa-plus-circle" aria-hidden="true"></i>
               <% end %>
             </td>
             <td>
               <%= link_to dose_path(dose), method: :delete do %>
-                  <i class="fa fa-trash destroy_dose"></i>
+              <i class="fa fa-trash destroy_dose"></i>
               <% end %>
             </td>
           </tr>
@@ -34,55 +34,57 @@
         </tbody>
       </table>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <ul class="list-inline">
-        <li>
-          <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail) %>
-        </li>
-        <li>
-          <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete %>
-        </li>
-        <br>
-      </ul>
-    </div>
-    <br>
-    <br>
-  </div>
-
-  <%= link_to "Back to all cocktails", root_path ,class: "btn btn-warning" %>
-</div>
-
-
-<div class="container">
-  <div class="row">
     <div class="col-sm-12 col-md-6">
       <h3>Reviews</h3>
       <table class="table table-bordered">
         <tbody>
+          <% if @cocktail.reviews.any? %>
           <thead>
             <th>Content</th>
             <th>Stars</th>
           </thead>
 
-          <div class="col-xs-12 col-sm-4">
-            <h4><strong>Reviews</strong></h4>
-            <ul>
-            <% if @cocktail.reviews.any? %>
-            <% @cocktail.reviews.each do |review| %>
-            <li>
-              <%= review.content %>&nbsp;|&nbsp;&nbsp;
-              <strong> <%stars = "*" * review.rating %><%= stars%></strong>
-              <% end %>
-            </li>
-            </ul>
-            </div>
-            <% else %>
-            <p>This cocktail has no reviews yet!</p>
-            <% end %>
-          </div>
+          <% @cocktail.reviews.each do |review| %>
+          <tr>
+            <td><%= review.content %></td>
+            <td><%= review.rating%></td>
+
+          </tr>
+          <% end %>
+          <% else %>
+          <p>This cocktail has no reviews yet!</p>
+          <%= link_to "Add Review", new_cocktail_review_path(@cocktail) ,class:"btn btn-primary"%>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-inline">
+          <li>
+            <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail) %>
+          </li>
+          <li>
+            <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete %>
+          </li>
+          <br>
+        </ul>
+      </div>
+      <br>
+      <br>
+
+    </div>
+    <%= link_to "Back to all cocktails", root_path ,class: "btn btn-warning" %>
+
+
+
+
+
+
+
 
 
 
