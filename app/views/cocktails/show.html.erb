@@ -12,7 +12,6 @@
           <thead>
             <th>Ingredient</th>
             <th>Description</th>
-            <th>Add dose</th>
             <th>Delete</th>
           </thead>
 
@@ -20,13 +19,15 @@
           <tr>
             <td><%= dose.description %></td>
             <td><%= dose.ingredient.name %></td>
-            <td><%= link_to new_cocktail_dose_path(@cocktail), class: "text-add" do %>
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-              <% end %>
-            </td>
             <td>
               <%= link_to dose_path(dose), method: :delete do %>
               <i class="fa fa-trash destroy_dose"></i>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+              <td><%= link_to new_cocktail_dose_path(@cocktail), class: "text-add" do %>
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
               <% end %>
             </td>
           </tr>
@@ -49,13 +50,21 @@
           <tr>
             <td><%= review.content %></td>
             <td><%= review.rating%></td>
-
+          </tr>
+          <tr>
+            <td>
+              <%= link_to new_cocktail_review_path(@cocktail), class: "text-add" do %>
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              <% end %>
+            </td>
           </tr>
           <% end %>
+
           <% else %>
           <p>This cocktail has no reviews yet!</p>
           <%= link_to "Add Review", new_cocktail_review_path(@cocktail) ,class:"btn btn-primary"%>
           <% end %>
+
         </tbody>
       </table>
 
@@ -70,8 +79,12 @@
           <li>
             <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete %>
           </li>
+          <li>
+            <%= link_to "Add Review", new_cocktail_review_path(@cocktail) %>
+          </li>
           <br>
         </ul>
+
       </div>
       <br>
       <br>
