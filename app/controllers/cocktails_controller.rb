@@ -11,6 +11,7 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @review = Review.new #once u embed form on show page
   end
 
   def new
