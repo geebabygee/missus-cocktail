@@ -16,7 +16,7 @@
           <% if cocktail.photo? %>
           <%= cl_image_path cocktail.photo, height: 600, width: 400, crop: :fill %>
           <% else %>
-          <%= image_path "background.jpg" %>
+          <%= image_tag "background.jpg" %>
           <% end %>
           );">
           <div class="card-description">
@@ -32,9 +32,16 @@
       </div>
     </div>
     <% end %>
-  </div>
-</div>
 
+  <div class="col-xs-12 col-sm-6 col-md-4 padding">
+    <div class="card-body card-new">
+      <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <i class="fas fa-glass" aria-hidden="true"></i>
+        <%= link_to '', new_cocktail_path, class: "card-link" %>
+      </div>
+    </div>
+  </div>
 
 
 
