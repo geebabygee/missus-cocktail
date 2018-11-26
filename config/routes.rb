@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   end
     resources :doses, only: [:destroy] #ASK WHYYYYYY
     # resources :reviews, only: [:destroy]
-
 end
 
 

@@ -8,12 +8,12 @@ class CocktailsController < ApplicationController
     else
       @cocktails = Cocktail.all
    end
- end
+  end
 
- def show
- end
+  def show
+  end
 
- def new
+  def new
     @cocktail = Cocktail.new #a new Cocktail for the form
   end
 
@@ -23,12 +23,12 @@ class CocktailsController < ApplicationController
     if @cocktail.save
       redirect_to cocktail_path(@cocktail) #or just @cocktail
                 # the user wants to see the cocktail he created
-              else
-                render :new
-              end
-            end
+    else
+      render :new
+    end
+  end
 
-            def edit
+  def edit
     #to render the form like new for create but we already have a cocktail so we find it
   end
 
@@ -50,6 +50,5 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo)
-      #:photo
     end
 end
