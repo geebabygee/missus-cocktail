@@ -13,10 +13,24 @@
 
 #logo {
   color: $pink;
-  text-shadow: 1px 1px 1px #ccc;
+  text-shadow: 1px 1px 1px grey;
   margin-left: 20px;
+  width: 35px;
+  height: 35px;
+  margin-top: 0px !important;
+
 }
+
+
 
 .navbar-wagon-white {
   background-color: white;
+}
+
+.navbar-wagon-brand {
+  display: flex;
+  align-items: center;
+  & :hover {
+    text-decoration: none;
+  }
 }
