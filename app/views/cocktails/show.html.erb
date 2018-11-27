@@ -9,6 +9,7 @@
       <h3>Cocktail Recipe</h3>
       <table class="table table-bordered">
         <tbody>
+          <% if @cocktail.doses.any? %>
           <thead>
             <th>Ingredient</th>
             <th>Description</th>
@@ -32,6 +33,11 @@
             </td>
           </tr>
           <% end %>
+          <% else %>
+          <p>This cocktail has no ingredients yet!</p>
+          <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail) ,class:"btn btn-primary"%>
+          <% end %>
+
         </tbody>
       </table>
     </div>
