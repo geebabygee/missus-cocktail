@@ -1,8 +1,8 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<% if @cocktail.photo? %>
+<div class="banner-show" style="background-image:linear-gradient(-1deg, rgba(0,10,0,0.6) 0%, rgba(0,10,41,0.4) 5%), url(<% if @cocktail.photo? %>
 '<%= cl_image_path @cocktail.photo, width: 400, height: 600, crop: :fill %>' <% else %> <%= image_tag 'background.jpg' %> <% end %>);">
-  <div class="banner-content">
-    <h1><%= @cocktail.name %></h1>
-  </div>
+<div class="banner-content">
+  <h1><%= @cocktail.name %></h1>
+</div>
 </div>
 <div class="container margin-bottom">
   <div class="row">
@@ -60,7 +60,7 @@
           <tr>
             <% end %>
             <td>
-              <%= link_to new_cocktail_review_path(@cocktail), class: "text-add" do %>
+              <%= link_to "#review", class: "text-add" do %>
               <i class="fa fa-plus-circle" aria-hidden="true"></i>
               <% end %>
             </td>
@@ -73,23 +73,61 @@
       </table>
     </div>
 
-</div>
-    <div class="row">
-      <div class="col-xs-12">
-        <ul class="list-inline">
-          <li>
-            <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail) %>
-          </li>
-          <li>
-            <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete %>
-          </li>
-          <br>
-        </ul>
-      </div>
-      <br>
-      <br>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-inline margin-bottom">
+        <li>
+          <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail) %>
+        </li>
+        <li>
+          <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete %>
+        </li>
+        <br>
+      </ul>
     </div>
-    <%= link_to "Back to all cocktails", root_path ,class: "btn btn-warning" %>
+    <br>
+    <br>
+  </div>
+
+
+
+<div id="review"></div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+
+
+      <h3>Create review for <%= @cocktail.name %></h3>
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <%= f.submit "Add a review", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+
+
+
+  <div class="row margin-top">
+    <div class="col-xs-12 col-md-6">
+      <%= link_to "Back to all cocktails", root_path ,class: "btn btn-warning" %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 

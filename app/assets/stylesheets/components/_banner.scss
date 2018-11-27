@@ -9,17 +9,17 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
- h1 {
-  font-size: 70px;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  color: $pink;
+  h1 {
+    font-size: 70px;
+    text-shadow: 2px 5px rgba(0, 0, 0, 0.1);
+    color: $pink;
   }
- p {
-  font-size: 25px;
-  font-weight: lighter;
-  color: rgb(255, 255, 255);
-  opacity: 0.6;
-  margin-bottom: 30px;
+  p {
+    font-size: 25px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+    margin-bottom: 30px;
   }
 }
 
@@ -34,6 +34,9 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
+  h1 {
+    text-transform: uppercase;
+  }
 }
 
 .down-section {
@@ -41,5 +44,14 @@
   width: 100%;
   bottom:50px;
   left: 0;
-  right: 0
+  right: 0;
+  a {
+    color: $pink;
+  }
+  i {
+    font-size: 80px;
+  }
 }
+
+
+
