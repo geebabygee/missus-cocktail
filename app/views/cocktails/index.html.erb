@@ -3,7 +3,7 @@
 <div class="container margin-bottom margin-top">
   <div class="row">
     <form class="form-inline text-center margin-bottom ">
-      <input class="form-control width" name="query" type="search" value="">
+      <input class="form-control width" name="query" type="search" value="<%=params[:query]%>">
       <button class="btn-4 " type="submit">Search</button>
     </form>
   </div>
@@ -15,7 +15,8 @@
           <% else %>
           <%= image_tag "background.jpg" %>
           <% end %>
-          );"></div>
+          );">
+          </div>
           <div class="card-description">
             <h2><%= cocktail.name %></h2>
             <ul>
@@ -38,3 +39,4 @@
       </div>
     </div>
   </div>
+</div>

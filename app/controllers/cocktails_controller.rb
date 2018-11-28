@@ -4,10 +4,10 @@ class CocktailsController < ApplicationController
 
   def index
     if params[:query].present?
-      @cocktails = Cocktail.where("name LIKE ?","%#{params[:query]}%")
+      @cocktails = Cocktail.where("name iLIKE ?","%#{params[:query]}%")
     else
       @cocktails = Cocktail.all
-   end
+    end
   end
 
   def show
@@ -23,7 +23,7 @@ class CocktailsController < ApplicationController
     #what the user has filled in the form
     if @cocktail.save
       redirect_to cocktail_path(@cocktail) #or just @cocktail
-                # the user wants to see the cocktail he created
+      # the user wants to see the cocktail he created
     else
       render :new
     end
@@ -51,5 +51,5 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo)
-    end
+  end
 end
