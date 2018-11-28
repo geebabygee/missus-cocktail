@@ -1,5 +1,4 @@
 <%= render "banner" %>
-
 <div id="go-down"></div>
 <div class="container margin-bottom margin-top">
   <div class="row">
@@ -10,29 +9,28 @@
   </div>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 padding">
-      <div class="card-body">
-        <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
+      <div class="col-xs-12 col-sm-6 col-md-4 padding">
+        <div class="card-body">
+          <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
           <% if cocktail.photo? %>
           <%= cl_image_path cocktail.photo, height: 600, width: 400, crop: :fill %>
           <% else %>
           <%= image_tag "background.jpg" %>
           <% end %>
-          );">
+          );"></div>
           <div class="card-description">
             <h2><%= cocktail.name %></h2>
             <ul>
               <% cocktail.doses.each do |dose| %>
-              <li><%= dose.description %>&nbsp<%= dose.ingredient.name %></li>
+                <li><%= dose.description %>&nbsp<%= dose.ingredient.name %></li>
               <% end %>
             </ul>
           </div>
         </div>
         <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
       </div>
-    </div>
     <% end %>
-
+  </div>
   <div class="col-xs-12 col-sm-6 col-md-4 padding">
     <div class="card-body card-new">
       <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
@@ -42,4 +40,3 @@
       </div>
     </div>
   </div>
-
