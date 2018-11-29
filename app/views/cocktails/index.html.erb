@@ -11,22 +11,19 @@
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-6 col-md-4 padding">
         <div class="card-body">
-          <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url( <% if cocktail.photo? %> <%= cl_image_path cocktail.photo, height: 600, width: 400, crop: :fill %>
-          <% else %>
-          <%= image_tag "background.jpg" %>
-          <% end %>
+          <div class="card-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url( <% if cocktail.photo? %> <%= cl_image_path cocktail.photo, height: 600, width: 400, crop: :fill %><% else %><%= image_tag "background.jpg" %><% end %>
           );">
+            <div class="card-description">
+              <h2><%= cocktail.name %></h2>
+              <ul>
+                <% cocktail.doses.each do |dose| %>
+                  <li><%= dose.description %>&nbsp<%= dose.ingredient.name %></li>
+                <% end %>
+              </ul>
+            </div>
           </div>
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
-            <ul>
-              <% cocktail.doses.each do |dose| %>
-                <li><%= dose.description %>&nbsp<%= dose.ingredient.name %></li>
-              <% end %>
-            </ul>
-          </div>
+          <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
         </div>
-        <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
       </div>
     <% end %>
     <div class="col-xs-12 col-sm-6 col-md-4 padding">
