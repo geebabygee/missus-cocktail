@@ -5,11 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.4.3'
+ruby '2.5.3'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
-gem 'font-awesome-sass', '~> 5.0.9'
+gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -27,7 +27,8 @@ gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'cloudinary'
+
+gem 'cloudinary', '~> 1.12.0'
 gem 'carrierwave', '~> 1.2'
 
 # Use CoffeeScript for .coffee assets and views
